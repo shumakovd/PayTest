@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hsg-Jz-uIh">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Currency Converter-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="CurrencyConverterVC" id="BYZ-38-t0r" customClass="CurrencyConverterVC" customModule="PayTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GjU-k1-w5r">
+                                <rect key="frame" x="0.0" y="86" width="390" height="758"/>
+                                <color key="backgroundColor" name="colorWB"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQL-uN-Ya2">
+                                <rect key="frame" x="32" y="722" width="326" height="56"/>
+                                <color key="backgroundColor" name="BrandColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="6Km-DG-aNC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="SUBMIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadiusView">
+                                        <real key="value" value="23"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submitAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OJh-C4-UTf"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QDM-Zt-4vD">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="86"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PaG-Ur-Nq3">
+                                        <rect key="frame" x="16" y="53" width="358" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="BrandColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PaG-Ur-Nq3" secondAttribute="bottom" constant="12" id="6sq-8c-2Zk"/>
+                                    <constraint firstAttribute="trailing" secondItem="PaG-Ur-Nq3" secondAttribute="trailing" constant="16" id="Lnk-TA-XDK"/>
+                                    <constraint firstItem="PaG-Ur-Nq3" firstAttribute="leading" secondItem="QDM-Zt-4vD" secondAttribute="leading" constant="16" id="YIx-Bb-QGQ"/>
+                                    <constraint firstAttribute="height" constant="86" id="ftv-DK-Dfx"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nQL-uN-Ya2" secondAttribute="bottom" constant="32" id="2rb-nB-AiQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nQL-uN-Ya2" secondAttribute="trailing" constant="32" id="6iM-fG-KQP"/>
+                            <constraint firstAttribute="bottom" secondItem="GjU-k1-w5r" secondAttribute="bottom" id="EkD-L2-4Kh"/>
+                            <constraint firstItem="QDM-Zt-4vD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I1u-pz-byh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QDM-Zt-4vD" secondAttribute="trailing" id="Ppx-C6-hW7"/>
+                            <constraint firstItem="QDM-Zt-4vD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TX0-tI-ZfO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GjU-k1-w5r" secondAttribute="trailing" id="Uy2-6E-mIX"/>
+                            <constraint firstItem="GjU-k1-w5r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Wf7-ep-dDw"/>
+                            <constraint firstItem="GjU-k1-w5r" firstAttribute="top" secondItem="QDM-Zt-4vD" secondAttribute="bottom" id="eO7-BY-8Fh"/>
+                            <constraint firstItem="nQL-uN-Ya2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="fXr-jG-xX3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Currency Converter" id="Z89-a0-k7s"/>
+                    <connections>
+                        <outlet property="submitButton" destination="nQL-uN-Ya2" id="5ad-5M-70L"/>
+                        <outlet property="tableView" destination="GjU-k1-w5r" id="MAh-Tk-3qO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.9230769230769" y="-17.061611374407583"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ahr-cP-J2f">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Hsg-Jz-uIh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VLw-JX-KgK">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mSG-NH-g8R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iq8-9I-HoW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="127.69230769230769" y="-17.061611374407583"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="BrandColor">
+            <color red="0.16099999845027924" green="0.61500000953674316" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="colorWB">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

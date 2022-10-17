@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E63534D6B99932ED5790BA6 /* Pods_PayTest_PayTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F0F437DFC775AD20D8EE819 /* Pods_PayTest_PayTestUITests.framework */; };
 		8413ABA428FD51C900DE8ECF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413ABA328FD51C900DE8ECF /* AppDelegate.swift */; };
-		8413ABA628FD51C900DE8ECF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413ABA528FD51C900DE8ECF /* SceneDelegate.swift */; };
-		8413ABA828FD51C900DE8ECF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413ABA728FD51C900DE8ECF /* ViewController.swift */; };
 		8413ABAB28FD51C900DE8ECF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8413ABA928FD51C900DE8ECF /* Main.storyboard */; };
 		8413ABAE28FD51C900DE8ECF /* PayTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8413ABAC28FD51C900DE8ECF /* PayTest.xcdatamodeld */; };
 		8413ABB028FD51CE00DE8ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8413ABAF28FD51CE00DE8ECF /* Assets.xcassets */; };
@@ -17,6 +16,32 @@
 		8413ABBE28FD51CE00DE8ECF /* PayTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413ABBD28FD51CE00DE8ECF /* PayTestTests.swift */; };
 		8413ABC828FD51CE00DE8ECF /* PayTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413ABC728FD51CE00DE8ECF /* PayTestUITests.swift */; };
 		8413ABCA28FD51CE00DE8ECF /* PayTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413ABC928FD51CE00DE8ECF /* PayTestUITestsLaunchTests.swift */; };
+		846B6AC728FD9E95009D9DD9 /* CurrencySellTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B6AC528FD9E95009D9DD9 /* CurrencySellTVCell.swift */; };
+		846B6AC828FD9E95009D9DD9 /* CurrencySellTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846B6AC628FD9E95009D9DD9 /* CurrencySellTVCell.xib */; };
+		846B6ACC28FD9EB5009D9DD9 /* CurrencyRecieveTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B6ACA28FD9EB5009D9DD9 /* CurrencyRecieveTVCell.swift */; };
+		846B6ACD28FD9EB5009D9DD9 /* CurrencyRecieveTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846B6ACB28FD9EB5009D9DD9 /* CurrencyRecieveTVCell.xib */; };
+		846B6AD128FDAB7E009D9DD9 /* CurrencyTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B6ACF28FDAB7E009D9DD9 /* CurrencyTVCell.swift */; };
+		846B6AD228FDAB7E009D9DD9 /* CurrencyTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846B6AD028FDAB7E009D9DD9 /* CurrencyTVCell.xib */; };
+		846B6AD428FDACD5009D9DD9 /* WalletML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B6AD328FDACD5009D9DD9 /* WalletML.swift */; };
+		84E899DF28FD578000385AD2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899DE28FD578000385AD2 /* APIManager.swift */; };
+		84E899E228FD59F700385AD2 /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899E128FD59F700385AD2 /* NetworkStatus.swift */; };
+		84E899E528FD674E00385AD2 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899E428FD674E00385AD2 /* BaseRouter.swift */; };
+		84E899E728FD678700385AD2 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899E628FD678700385AD2 /* APIConfiguration.swift */; };
+		84E899E928FD682100385AD2 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899E828FD682100385AD2 /* AppSettings.swift */; };
+		84E899ED28FD6E2C00385AD2 /* CurrencyConverterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899EC28FD6E2C00385AD2 /* CurrencyConverterVC.swift */; };
+		84E899F128FD6EFA00385AD2 /* BasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899F028FD6EFA00385AD2 /* BasicVC.swift */; };
+		84E899F328FD6F8800385AD2 /* BasicCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899F228FD6F8800385AD2 /* BasicCVCell.swift */; };
+		84E899F528FD6FB300385AD2 /* BasicTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899F428FD6FB200385AD2 /* BasicTVCell.swift */; };
+		84E899F728FD711600385AD2 /* NotificationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899F628FD711600385AD2 /* NotificationExt.swift */; };
+		84E899FB28FD736E00385AD2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899FA28FD736E00385AD2 /* Utils.swift */; };
+		84E89A0028FD77BA00385AD2 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899FF28FD77BA00385AD2 /* Currency.swift */; };
+		84E89A0228FD79A700385AD2 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E89A0128FD79A700385AD2 /* UIViewExt.swift */; };
+		84E89A0B28FD80AD00385AD2 /* CurrencyCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E89A0928FD80AD00385AD2 /* CurrencyCVCell.swift */; };
+		84E89A0C28FD80AD00385AD2 /* CurrencyCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E89A0A28FD80AD00385AD2 /* CurrencyCVCell.xib */; };
+		84E89A1228FD81D500385AD2 /* CurrencyConverterHeaderTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E89A1028FD81D500385AD2 /* CurrencyConverterHeaderTVCell.swift */; };
+		84E89A1328FD81D500385AD2 /* CurrencyConverterHeaderTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E89A1128FD81D500385AD2 /* CurrencyConverterHeaderTVCell.xib */; };
+		939414D216AEC0C8746CE831 /* Pods_PayTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4EC7B9629D560B088107210 /* Pods_PayTest.framework */; };
+		C05534FB2270BDA5FB969E75 /* Pods_PayTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A65CEB8508EF247872C3FAC6 /* Pods_PayTestTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,10 +62,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19FDAFCE0704C8D2FB9A977F /* Pods-PayTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayTest.debug.xcconfig"; path = "Target Support Files/Pods-PayTest/Pods-PayTest.debug.xcconfig"; sourceTree = "<group>"; };
+		42414388AA1CAF197892A5FA /* Pods-PayTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayTestTests.release.xcconfig"; path = "Target Support Files/Pods-PayTestTests/Pods-PayTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		683F01E0E1BF881DC800C1B8 /* Pods-PayTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayTest.release.xcconfig"; path = "Target Support Files/Pods-PayTest/Pods-PayTest.release.xcconfig"; sourceTree = "<group>"; };
+		736DCDE4AA4210B5747E7575 /* Pods-PayTest-PayTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayTest-PayTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-PayTest-PayTestUITests/Pods-PayTest-PayTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7BE158D7C6A3B1D68A35C603 /* Pods-PayTest-PayTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayTest-PayTestUITests.release.xcconfig"; path = "Target Support Files/Pods-PayTest-PayTestUITests/Pods-PayTest-PayTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8413ABA028FD51C900DE8ECF /* PayTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8413ABA328FD51C900DE8ECF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8413ABA528FD51C900DE8ECF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8413ABA728FD51C900DE8ECF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8413ABAA28FD51C900DE8ECF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8413ABAD28FD51C900DE8ECF /* PayTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PayTest.xcdatamodel; sourceTree = "<group>"; };
 		8413ABAF28FD51CE00DE8ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +79,34 @@
 		8413ABC328FD51CE00DE8ECF /* PayTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8413ABC728FD51CE00DE8ECF /* PayTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTestUITests.swift; sourceTree = "<group>"; };
 		8413ABC928FD51CE00DE8ECF /* PayTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		846B6AC528FD9E95009D9DD9 /* CurrencySellTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySellTVCell.swift; sourceTree = "<group>"; };
+		846B6AC628FD9E95009D9DD9 /* CurrencySellTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencySellTVCell.xib; sourceTree = "<group>"; };
+		846B6ACA28FD9EB5009D9DD9 /* CurrencyRecieveTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRecieveTVCell.swift; sourceTree = "<group>"; };
+		846B6ACB28FD9EB5009D9DD9 /* CurrencyRecieveTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyRecieveTVCell.xib; sourceTree = "<group>"; };
+		846B6ACF28FDAB7E009D9DD9 /* CurrencyTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTVCell.swift; sourceTree = "<group>"; };
+		846B6AD028FDAB7E009D9DD9 /* CurrencyTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTVCell.xib; sourceTree = "<group>"; };
+		846B6AD328FDACD5009D9DD9 /* WalletML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletML.swift; sourceTree = "<group>"; };
+		84E899DE28FD578000385AD2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		84E899E128FD59F700385AD2 /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
+		84E899E428FD674E00385AD2 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		84E899E628FD678700385AD2 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		84E899E828FD682100385AD2 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		84E899EC28FD6E2C00385AD2 /* CurrencyConverterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterVC.swift; sourceTree = "<group>"; };
+		84E899F028FD6EFA00385AD2 /* BasicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicVC.swift; sourceTree = "<group>"; };
+		84E899F228FD6F8800385AD2 /* BasicCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCVCell.swift; sourceTree = "<group>"; };
+		84E899F428FD6FB200385AD2 /* BasicTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTVCell.swift; sourceTree = "<group>"; };
+		84E899F628FD711600385AD2 /* NotificationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationExt.swift; sourceTree = "<group>"; };
+		84E899FA28FD736E00385AD2 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		84E899FF28FD77BA00385AD2 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		84E89A0128FD79A700385AD2 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		84E89A0928FD80AD00385AD2 /* CurrencyCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCVCell.swift; sourceTree = "<group>"; };
+		84E89A0A28FD80AD00385AD2 /* CurrencyCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCVCell.xib; sourceTree = "<group>"; };
+		84E89A1028FD81D500385AD2 /* CurrencyConverterHeaderTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterHeaderTVCell.swift; sourceTree = "<group>"; };
+		84E89A1128FD81D500385AD2 /* CurrencyConverterHeaderTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyConverterHeaderTVCell.xib; sourceTree = "<group>"; };
+		8F0F437DFC775AD20D8EE819 /* Pods_PayTest_PayTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayTest_PayTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A65CEB8508EF247872C3FAC6 /* Pods_PayTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D1C29EFF9273C1CEFC04C4 /* Pods-PayTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PayTestTests.debug.xcconfig"; path = "Target Support Files/Pods-PayTestTests/Pods-PayTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E4EC7B9629D560B088107210 /* Pods_PayTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PayTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				939414D216AEC0C8746CE831 /* Pods_PayTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C05534FB2270BDA5FB969E75 /* Pods_PayTestTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +130,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E63534D6B99932ED5790BA6 /* Pods_PayTest_PayTestUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20178F6966433E1A2F9C2BF2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4EC7B9629D560B088107210 /* Pods_PayTest.framework */,
+				8F0F437DFC775AD20D8EE819 /* Pods_PayTest_PayTestUITests.framework */,
+				A65CEB8508EF247872C3FAC6 /* Pods_PayTestTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		723BB4A48EEC04E67DD407CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				19FDAFCE0704C8D2FB9A977F /* Pods-PayTest.debug.xcconfig */,
+				683F01E0E1BF881DC800C1B8 /* Pods-PayTest.release.xcconfig */,
+				736DCDE4AA4210B5747E7575 /* Pods-PayTest-PayTestUITests.debug.xcconfig */,
+				7BE158D7C6A3B1D68A35C603 /* Pods-PayTest-PayTestUITests.release.xcconfig */,
+				A9D1C29EFF9273C1CEFC04C4 /* Pods-PayTestTests.debug.xcconfig */,
+				42414388AA1CAF197892A5FA /* Pods-PayTestTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8413AB9728FD51C900DE8ECF = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +167,8 @@
 				8413ABBC28FD51CE00DE8ECF /* PayTestTests */,
 				8413ABC628FD51CE00DE8ECF /* PayTestUITests */,
 				8413ABA128FD51C900DE8ECF /* Products */,
+				723BB4A48EEC04E67DD407CE /* Pods */,
+				20178F6966433E1A2F9C2BF2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,11 +186,15 @@
 			isa = PBXGroup;
 			children = (
 				8413ABA328FD51C900DE8ECF /* AppDelegate.swift */,
-				8413ABA528FD51C900DE8ECF /* SceneDelegate.swift */,
-				8413ABA728FD51C900DE8ECF /* ViewController.swift */,
-				8413ABA928FD51C900DE8ECF /* Main.storyboard */,
+				84E899E828FD682100385AD2 /* AppSettings.swift */,
+				84E899EB28FD6DC300385AD2 /* Controllers */,
+				84E899FE28FD776F00385AD2 /* Constants */,
+				84E899DC28FD563300385AD2 /* Extensions */,
+				84E899F928FD732B00385AD2 /* Utils */,
+				84E899E028FD59DC00385AD2 /* Networking */,
+				84E899DB28FD561400385AD2 /* Storyboards */,
+				84E899FC28FD758200385AD2 /* Lottie */,
 				8413ABAF28FD51CE00DE8ECF /* Assets.xcassets */,
-				8413ABB128FD51CE00DE8ECF /* LaunchScreen.storyboard */,
 				8413ABB428FD51CE00DE8ECF /* Info.plist */,
 				8413ABAC28FD51C900DE8ECF /* PayTest.xcdatamodeld */,
 			);
@@ -130,6 +218,176 @@
 			path = PayTestUITests;
 			sourceTree = "<group>";
 		};
+		846B6AC428FD9E6F009D9DD9 /* CurrencySellTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				846B6AC528FD9E95009D9DD9 /* CurrencySellTVCell.swift */,
+				846B6AC628FD9E95009D9DD9 /* CurrencySellTVCell.xib */,
+			);
+			path = CurrencySellTVCell;
+			sourceTree = "<group>";
+		};
+		846B6AC928FD9E9E009D9DD9 /* CurrencyRecieveTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				846B6ACA28FD9EB5009D9DD9 /* CurrencyRecieveTVCell.swift */,
+				846B6ACB28FD9EB5009D9DD9 /* CurrencyRecieveTVCell.xib */,
+			);
+			path = CurrencyRecieveTVCell;
+			sourceTree = "<group>";
+		};
+		846B6ACE28FDAB64009D9DD9 /* CurrencyTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				846B6ACF28FDAB7E009D9DD9 /* CurrencyTVCell.swift */,
+				846B6AD028FDAB7E009D9DD9 /* CurrencyTVCell.xib */,
+			);
+			path = CurrencyTVCell;
+			sourceTree = "<group>";
+		};
+		84E899DB28FD561400385AD2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8413ABA928FD51C900DE8ECF /* Main.storyboard */,
+				8413ABB128FD51CE00DE8ECF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		84E899DC28FD563300385AD2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84E89A0128FD79A700385AD2 /* UIViewExt.swift */,
+				84E899F628FD711600385AD2 /* NotificationExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		84E899DD28FD56A700385AD2 /* API Manager */ = {
+			isa = PBXGroup;
+			children = (
+				84E899EA28FD6B6200385AD2 /* Models */,
+				84E899E328FD674000385AD2 /* Routers */,
+				84E899DE28FD578000385AD2 /* APIManager.swift */,
+				84E899E628FD678700385AD2 /* APIConfiguration.swift */,
+			);
+			path = "API Manager";
+			sourceTree = "<group>";
+		};
+		84E899E028FD59DC00385AD2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				84E899DD28FD56A700385AD2 /* API Manager */,
+				84E899E128FD59F700385AD2 /* NetworkStatus.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		84E899E328FD674000385AD2 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				84E899E428FD674E00385AD2 /* BaseRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		84E899EA28FD6B6200385AD2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				846B6AD328FDACD5009D9DD9 /* WalletML.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84E899EB28FD6DC300385AD2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				84E899EE28FD6E4E00385AD2 /* Basic */,
+				84E899EF28FD6E6500385AD2 /* Currency Converter */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84E899EE28FD6E4E00385AD2 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				84E899F028FD6EFA00385AD2 /* BasicVC.swift */,
+				84E899F428FD6FB200385AD2 /* BasicTVCell.swift */,
+				84E899F228FD6F8800385AD2 /* BasicCVCell.swift */,
+			);
+			path = Basic;
+			sourceTree = "<group>";
+		};
+		84E899EF28FD6E6500385AD2 /* Currency Converter */ = {
+			isa = PBXGroup;
+			children = (
+				84E899F828FD72D400385AD2 /* Cells */,
+				84E899EC28FD6E2C00385AD2 /* CurrencyConverterVC.swift */,
+			);
+			path = "Currency Converter";
+			sourceTree = "<group>";
+		};
+		84E899F828FD72D400385AD2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				846B6ACE28FDAB64009D9DD9 /* CurrencyTVCell */,
+				84E89A0D28FD811000385AD2 /* CurrencyCVCell */,
+				846B6AC928FD9E9E009D9DD9 /* CurrencyRecieveTVCell */,
+				846B6AC428FD9E6F009D9DD9 /* CurrencySellTVCell */,
+				84E89A0F28FD814A00385AD2 /* CurrencyConverterHeaderTVCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		84E899F928FD732B00385AD2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84E899FA28FD736E00385AD2 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		84E899FC28FD758200385AD2 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				84E899FD28FD758F00385AD2 /* JSON */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		84E899FD28FD758F00385AD2 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		84E899FE28FD776F00385AD2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				84E899FF28FD77BA00385AD2 /* Currency.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		84E89A0D28FD811000385AD2 /* CurrencyCVCell */ = {
+			isa = PBXGroup;
+			children = (
+				84E89A0928FD80AD00385AD2 /* CurrencyCVCell.swift */,
+				84E89A0A28FD80AD00385AD2 /* CurrencyCVCell.xib */,
+			);
+			path = CurrencyCVCell;
+			sourceTree = "<group>";
+		};
+		84E89A0F28FD814A00385AD2 /* CurrencyConverterHeaderTVCell */ = {
+			isa = PBXGroup;
+			children = (
+				84E89A1028FD81D500385AD2 /* CurrencyConverterHeaderTVCell.swift */,
+				84E89A1128FD81D500385AD2 /* CurrencyConverterHeaderTVCell.xib */,
+			);
+			path = CurrencyConverterHeaderTVCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,9 +395,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8413ABCD28FD51CE00DE8ECF /* Build configuration list for PBXNativeTarget "PayTest" */;
 			buildPhases = (
+				BBDA70D003EA8B5DFD57E86B /* [CP] Check Pods Manifest.lock */,
 				8413AB9C28FD51C900DE8ECF /* Sources */,
 				8413AB9D28FD51C900DE8ECF /* Frameworks */,
 				8413AB9E28FD51C900DE8ECF /* Resources */,
+				A0732A34D406C4351F8563B7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +414,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8413ABD028FD51CE00DE8ECF /* Build configuration list for PBXNativeTarget "PayTestTests" */;
 			buildPhases = (
+				02802C5B8E36030E9264D38E /* [CP] Check Pods Manifest.lock */,
 				8413ABB528FD51CE00DE8ECF /* Sources */,
 				8413ABB628FD51CE00DE8ECF /* Frameworks */,
 				8413ABB728FD51CE00DE8ECF /* Resources */,
@@ -172,9 +433,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8413ABD328FD51CE00DE8ECF /* Build configuration list for PBXNativeTarget "PayTestUITests" */;
 			buildPhases = (
+				7E28B1050E594E8A40BD8245 /* [CP] Check Pods Manifest.lock */,
 				8413ABBF28FD51CE00DE8ECF /* Sources */,
 				8413ABC028FD51CE00DE8ECF /* Frameworks */,
 				8413ABC128FD51CE00DE8ECF /* Resources */,
+				E8D502B316BEBC7490941099 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,9 +497,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846B6AD228FDAB7E009D9DD9 /* CurrencyTVCell.xib in Resources */,
+				846B6AC828FD9E95009D9DD9 /* CurrencySellTVCell.xib in Resources */,
+				84E89A0C28FD80AD00385AD2 /* CurrencyCVCell.xib in Resources */,
 				8413ABB328FD51CE00DE8ECF /* LaunchScreen.storyboard in Resources */,
 				8413ABB028FD51CE00DE8ECF /* Assets.xcassets in Resources */,
 				8413ABAB28FD51C900DE8ECF /* Main.storyboard in Resources */,
+				84E89A1328FD81D500385AD2 /* CurrencyConverterHeaderTVCell.xib in Resources */,
+				846B6ACD28FD9EB5009D9DD9 /* CurrencyRecieveTVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,15 +524,135 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		02802C5B8E36030E9264D38E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PayTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E28B1050E594E8A40BD8245 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PayTest-PayTestUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0732A34D406C4351F8563B7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayTest/Pods-PayTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayTest/Pods-PayTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PayTest/Pods-PayTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBDA70D003EA8B5DFD57E86B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PayTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8D502B316BEBC7490941099 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayTest-PayTestUITests/Pods-PayTest-PayTestUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PayTest-PayTestUITests/Pods-PayTest-PayTestUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PayTest-PayTestUITests/Pods-PayTest-PayTestUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8413AB9C28FD51C900DE8ECF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8413ABA828FD51C900DE8ECF /* ViewController.swift in Sources */,
+				84E899ED28FD6E2C00385AD2 /* CurrencyConverterVC.swift in Sources */,
+				84E899DF28FD578000385AD2 /* APIManager.swift in Sources */,
+				84E899E528FD674E00385AD2 /* BaseRouter.swift in Sources */,
 				8413ABA428FD51C900DE8ECF /* AppDelegate.swift in Sources */,
+				846B6AC728FD9E95009D9DD9 /* CurrencySellTVCell.swift in Sources */,
+				84E899E228FD59F700385AD2 /* NetworkStatus.swift in Sources */,
+				84E899FB28FD736E00385AD2 /* Utils.swift in Sources */,
+				84E899F328FD6F8800385AD2 /* BasicCVCell.swift in Sources */,
+				84E89A0B28FD80AD00385AD2 /* CurrencyCVCell.swift in Sources */,
+				846B6ACC28FD9EB5009D9DD9 /* CurrencyRecieveTVCell.swift in Sources */,
+				84E899E728FD678700385AD2 /* APIConfiguration.swift in Sources */,
+				84E89A0028FD77BA00385AD2 /* Currency.swift in Sources */,
+				84E899F528FD6FB300385AD2 /* BasicTVCell.swift in Sources */,
+				84E89A1228FD81D500385AD2 /* CurrencyConverterHeaderTVCell.swift in Sources */,
+				84E899F728FD711600385AD2 /* NotificationExt.swift in Sources */,
+				84E899F128FD6EFA00385AD2 /* BasicVC.swift in Sources */,
+				846B6AD128FDAB7E009D9DD9 /* CurrencyTVCell.swift in Sources */,
+				84E89A0228FD79A700385AD2 /* UIViewExt.swift in Sources */,
+				84E899E928FD682100385AD2 /* AppSettings.swift in Sources */,
+				846B6AD428FDACD5009D9DD9 /* WalletML.swift in Sources */,
 				8413ABAE28FD51C900DE8ECF /* PayTest.xcdatamodeld in Sources */,
-				8413ABA628FD51C900DE8ECF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +824,7 @@
 		};
 		8413ABCE28FD51CE00DE8ECF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FDAFCE0704C8D2FB9A977F /* Pods-PayTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,11 +833,14 @@
 				DEVELOPMENT_TEAM = N4M3759P9C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PayTest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PayTest;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -456,14 +848,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PayTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		8413ABCF28FD51CE00DE8ECF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683F01E0E1BF881DC800C1B8 /* Pods-PayTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -472,11 +868,14 @@
 				DEVELOPMENT_TEAM = N4M3759P9C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PayTest/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PayTest;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,14 +883,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.PayTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		8413ABD128FD51CE00DE8ECF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9D1C29EFF9273C1CEFC04C4 /* Pods-PayTestTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +915,7 @@
 		};
 		8413ABD228FD51CE00DE8ECF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 42414388AA1CAF197892A5FA /* Pods-PayTestTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +936,7 @@
 		};
 		8413ABD428FD51CE00DE8ECF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 736DCDE4AA4210B5747E7575 /* Pods-PayTest-PayTestUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +955,7 @@
 		};
 		8413ABD528FD51CE00DE8ECF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BE158D7C6A3B1D68A35C603 /* Pods-PayTest-PayTestUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
