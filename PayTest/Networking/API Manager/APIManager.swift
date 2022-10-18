@@ -88,18 +88,15 @@ final class APIManager {
                 } catch {
                     print(error)
                 }
+                completion(.success(object))
             }
         }
     }
     
     
-    // -------------------------------------------------------------------------------------------
+    // MARK: - CURRENCY METHODS -
 
-    // MARK: - CURRENCY METHODS
-
-    // -------------------------------------------------------------------------------------------
-
-    func getCurrencyAmount<T: Codable>(fromAmount: Double, fromCurrency: Currency, toCurrency: Currency, completion: @escaping (Result<T>) -> Void) {
+    func getCurrencyAmount<T: Codable>(fromAmount: Double, fromCurrency: NamesofCurrencies, toCurrency: NamesofCurrencies, completion: @escaping (Result<T>) -> Void) {
         let router = CurrencyRouter(anEndpoint: .exchange(fromAmount: fromAmount, fromCurrency: fromCurrency, toCurrency: toCurrency))
         performRequest(router: router, completion: completion)
     }

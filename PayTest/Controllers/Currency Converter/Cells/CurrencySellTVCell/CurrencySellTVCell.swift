@@ -38,7 +38,7 @@ class CurrencySellTVCell: BasicTVCell {
     
     // MARK: - Methods
     
-    func configureUI(currency: Currency, delegate: CurrencyExchange?) {
+    func configureCell(currency: NamesofCurrencies, delegate: CurrencyExchange?) {
         currencyLabel.text = currency.rawValue
         self.delegate = delegate
     }
@@ -46,7 +46,7 @@ class CurrencySellTVCell: BasicTVCell {
     // MARK: - IBActions
     
     @IBAction private func changeCurrencyAction(_ sender: UIButton) {
-        delegate?.changeCurrencyForSell(currency: .USD, sender: sender)
+        delegate?.changeCurrencyForSellOrRecieve(type: .sell, sender: sender)
     }
     
 }

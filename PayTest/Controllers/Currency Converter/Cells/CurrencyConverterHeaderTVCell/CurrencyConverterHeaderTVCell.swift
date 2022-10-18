@@ -27,7 +27,7 @@ class CurrencyConverterHeaderTVCell: BasicTVCell {
         super.setSelected(selected, animated: animated)
     }
 
-    // MARK: - Methods
+    // MARK: - Public Methods
 
     func configureCell(label: String) {
         headerLabel.text = label

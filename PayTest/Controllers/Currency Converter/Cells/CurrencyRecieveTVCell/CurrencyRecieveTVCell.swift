@@ -17,6 +17,8 @@ class CurrencyRecieveTVCell: BasicTVCell {
     // MARK: - Properties
     
     private weak var delegate: CurrencyExchange?
+    private var actualAmountOfCurrency: Double = 0.0
+    private var currencyString: String = ""
             
     // MARK: - Lifecycle
 
@@ -36,17 +38,30 @@ class CurrencyRecieveTVCell: BasicTVCell {
         super.prepareForReuse()
     }
 
-    // MARK: - Methods
+    // MARK: - Public Methods
 
-    func configureUI(currency: Currency, delegate: CurrencyExchange?) {
-        currencyLabel.text = currency.rawValue
+    func configureCell(currency: NamesofCurrencies, actualAmountOfCurrency: Double, delegate: CurrencyExchange?) {
+        currencyString = currency.rawValue
+        self.actualAmountOfCurrency = actualAmountOfCurrency
         self.delegate = delegate
+        
+        configureUI()
+    }
+    
+    // MARK: - Private Methods
+    
+    private func configureUI() {
+        self.currencyLabel.text = currencyString
+        if actualAmountOfCurrency == 0.0 {
+            self.amountLabel.text = ""
+        } else {
+            self.amountLabel.text = String(format: "%.2f", actualAmountOfCurrency)
+        }
     }
     
     // MARK: - IBActions
     
     @IBAction private func changeCurrencyAction(_ sender: UIButton) {
-        delegate?.changeCurrencyForRecieve(currency: .USD, sender: sender)
+        delegate?.changeCurrencyForSellOrRecieve(type: .recieve,sender: sender)
     }
-    
 }

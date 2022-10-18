@@ -11,8 +11,7 @@ import DropDown
 class CurrencyTypeTVCell: DropDownCell {
         
     // MARK: - IBOutlets
-        
-    // @IBOutlet weak var titleLabel: UILabel!
+            
     @IBOutlet weak var statusLabel: UILabel!
     
     // MARK: - Lifecycle

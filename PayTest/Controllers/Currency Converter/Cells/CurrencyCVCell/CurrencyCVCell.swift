@@ -14,9 +14,9 @@ class CurrencyCVCell: BasicCVCell {
     @IBOutlet weak var titleLabel: UILabel!
     
     // MARK: - Properties
-    
-    private var currencyLabel: String = ""
+        
     private var currencyCount: String = ""
+    private var currencyString: String = ""
 
     // MARK: - Lifecycle
 
@@ -35,16 +35,16 @@ class CurrencyCVCell: BasicCVCell {
     // MARK: - Public Methods
 
     func configureCell(balance: WalletML) {
-        currencyLabel = balance.currency?.rawValue ?? ""        
-        currencyCount = String(format: "%.2f", balance.amount ?? 0.0)
+        currencyString = balance.currency.name.rawValue
+        currencyCount = String(format: "%.2f", balance.amount)
         
-        titleSetup()
+        configureUI()
     }
 
     // MARK: - Private Methods
 
-    private func titleSetup() {
-        titleLabel.text = "\(currencyCount) \(currencyLabel)"
+    private func configureUI() {
+        titleLabel.text = "\(currencyCount) \(currencyString)"
     }
 
 }

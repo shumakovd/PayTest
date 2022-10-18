@@ -9,7 +9,7 @@ import Alamofire
 import Foundation
 
 enum CurrencyEndpoint {
-    case exchange(fromAmount: Double, fromCurrency: Currency, toCurrency: Currency)    
+    case exchange(fromAmount: Double, fromCurrency: NamesofCurrencies, toCurrency: NamesofCurrencies)
 }
 
 class CurrencyRouter: BaseRouter {

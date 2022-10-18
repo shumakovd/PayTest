@@ -8,13 +8,36 @@
 import Foundation
 
 class WalletML {    
-    var currency: Currency?
-    var amount: Double?
+    var currency: Currency
+    var amount: Double
     
-    init(currency: Currency? = nil, amount: Double? = nil) {
+    init(currency: Currency, amount: Double) {
         self.currency = currency
         self.amount = amount
     }
+    
+    func freeFeeExist() -> Bool {
+        let freeConverters = UserDefaults.standard.getCountConverted() ?? 0
+        // Do what do you want with count
+        return freeConverters < 5 ? true : false
+    }
+    
+    func isThereEnoughCash(forTheAmount: Double) -> Bool {
+        return amount >= (currency.fee + forTheAmount)
+    }
+    
+    // Decrease
+    func decreaseCurrency(inTheAmountOf: Double) {
+        amount -= inTheAmountOf + currency.fee
+        UserDefaults.setUserBalance(value: amount, currency: currency)
+    }
+    
+    // Increase
+    func increaseCurrency(forTheAmount: Double) {
+        amount += forTheAmount
+        UserDefaults.setUserBalance(value: amount, currency: currency)
+    }
+    
 }
 
 class Fee {

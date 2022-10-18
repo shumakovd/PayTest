@@ -8,13 +8,12 @@
 import UIKit
 import DropDown
 
-protocol CurrencyExchange: AnyObject {
-    func changeCurrencyForSell(currency: Currency, sender: UIButton)
-    func changeCurrencyForRecieve(currency: Currency, sender: UIButton)
-}
-
 enum ExchangeType {
     case sell, recieve
+}
+
+protocol CurrencyExchange: AnyObject {
+    func changeCurrencyForSellOrRecieve(type: ExchangeType, sender: UIButton)
 }
 
 class CurrencyConverterVC: BasicVC {
@@ -26,24 +25,36 @@ class CurrencyConverterVC: BasicVC {
     // MARK: - Properties
     
     private var myBalance: [WalletML] = []
-    private var actualAmountOfCurrency: Double = 0.0
+    private var userWantToSell: Double = 0.0
+    private var currentFee: Double = 0.0
+    private let currencyListDropDown = DropDown()
+    private let serialQueue = DispatchQueue(label: "com.serial-queue", qos: .utility)
     
-    private var currencySell: Currency = .EUR {
+    private var actualAmountOfCurrency: Double = 0.0 {
+        willSet {
+            if newValue > 0.0 {
+                buttonState(state: true, button: submitButton)
+            } else {
+                buttonState(state: false, button: submitButton)
+            }
+        }
+    }
+    private var currencySell: NamesofCurrencies = .EUR {
         didSet(oldValue) {
             if currencySell == currencyRecieve {
                 currencyRecieve = oldValue
             }
+            howMuchCurrencyEqualsChecking(amount: userWantToSell)
         }
     }
-    private var currencyRecieve: Currency = .USD {
+    private var currencyRecieve: NamesofCurrencies = .USD {
         didSet(oldValue) {
             if currencyRecieve == currencySell {
                 currencySell = oldValue
             }
+            howMuchCurrencyEqualsChecking(amount: userWantToSell)
         }
     }
-        
-    private let currencyListDropDown = DropDown()
     
     // MARK: - LifeCycle
 
@@ -52,6 +63,7 @@ class CurrencyConverterVC: BasicVC {
         
         // setup
         setupTableView()
+        buttonState(state: false, button: submitButton)
         //
         loadData()
         hideKeyboardWhenTappedAround()
@@ -69,16 +81,67 @@ class CurrencyConverterVC: BasicVC {
         CurrencyConverterHeaderTVCell.registerForTableView(aTableView: tableView)
     }
     
-    private func loadData() {        
+    private func loadData() {
         myBalance = AppSettings.shared.getBalance()
         //
         tableView.reloadData()
     }
     
+    private func buttonState(state: Bool, button: UIButton) {
+        button.isEnabled = state
+        button.alpha = state ? 1 : 0.8
+    }
+        
+    private func checkIfUserHasEnoughtMoney() -> Bool {
+        for each in myBalance {
+            if each.currency.name == currencySell {
+                currentFee = each.currency.fee
+                if each.freeFeeExist() {
+                    currentFee = 0.0
+                }
+                if each.isThereEnoughCash(forTheAmount: userWantToSell) {
+                    return true
+                } else {
+                    return false
+                }
+            }
+        }
+        return false
+    }
+    
+    private func currencyConvert(completion: @escaping (Bool) -> Void) {
+        // Check if user has enough cash
+        if !checkIfUserHasEnoughtMoney() {
+            completion(false)
+            return
+        }
+                
+        for each in myBalance {
+            if each.currency.name == currencySell {
+                each.decreaseCurrency(inTheAmountOf: userWantToSell)
+            }
+            
+            if each.currency.name == currencyRecieve {
+                each.increaseCurrency(forTheAmount: actualAmountOfCurrency)
+            }
+        }
+        completion(true)
+    }
+    
+    
     // MARK: - API Methods
     
     private func howMuchCurrencyEqualsChecking(amount: Double) {
-        APIManager.shared().getCurrencyAmount(fromAmount: amount, fromCurrency: currencySell, toCurrency: currencyRecieve) { [weak self] (_ result: APIManager.Result<ExchangeML>) in
+        serialQueue.sync { [unowned self] in
+            self.getActualAmountOfCurrency(amount: amount) {
+                let indexPath = IndexPath(item: 1, section: 1)
+                self.tableView.reloadRows(at: [indexPath], with: .none)
+            }
+        }
+    }
+    
+    private func getActualAmountOfCurrency(amount: Double, completion: @escaping () -> Void) {
+        APIManager.shared().getCurrencyAmount(fromAmount: amount, fromCurrency: currencySell, toCurrency: currencyRecieve) { [weak self] (result: APIManager.Result<ExchangeML>) in
             guard let strongSelf = self else { return }
             
             switch result {
@@ -87,14 +150,12 @@ class CurrencyConverterVC: BasicVC {
                 strongSelf.actualAmountOfCurrency = amount
                 
             case let .failure(error):
-                // Alert
-                print("error: ", error)
+                Utils.dismissAlert(title: "Error", message: error, completion: {_,_ in })
+                strongSelf.actualAmountOfCurrency = 0.0
             }
+            completion()
         }
     }
-    
-    
-    
     
     // MARK: - Drop Down
     
@@ -112,7 +173,7 @@ class CurrencyConverterVC: BasicVC {
         view.endEditing(true)
         setupCurrencyListDropDown(dropDown: currencyListDropDown)
         //
-        let dataSource = AppSettings.currencies.compactMap({$0.rawValue})
+        let dataSource = AppSettings.currencies.compactMap({$0.name.rawValue})
         currencyListDropDown.dataSource = dataSource
         // modify frame, size, etc
         currencyListDropDown.anchorView = sender
@@ -137,20 +198,17 @@ class CurrencyConverterVC: BasicVC {
             switch type {
             case .sell:
                 for each in AppSettings.currencies {
-                    if each.rawValue == item {
-                        strongSelf.currencySell = each
+                    if each.name.rawValue == item {
+                        strongSelf.currencySell = each.name
                     }
                 }
             case .recieve:
-                
                 for each in AppSettings.currencies {
-                    if each.rawValue == item {
-                        strongSelf.currencyRecieve = each
+                    if each.name.rawValue == item {
+                        strongSelf.currencyRecieve = each.name
                     }
                 }
             }
-            
-            print("Index: ", index)
             
             strongSelf.tableView.reloadData()
             strongSelf.currencyListDropDown.hide()
@@ -171,34 +229,44 @@ class CurrencyConverterVC: BasicVC {
     override func keyboardWillHide(notification _: NSNotification) {
         submitButton.layer.transform = CATransform3DIdentity
     }
-
+    
+    override func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BasicVC.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(tap)
+    }
     
     // MARK: - IBActions
     
     @IBAction private func submitAction(_ sender: UIButton) {
         sender.bounce()
-        
-//        startIndicator()
-//        let timer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { timer in
-//            self.stopIndicator()
-//        }
+        currencyConvert() { result in
+            if result {
+                let feeString = String(format: "%.2f", self.currentFee)
+                Utils.dismissAlert(title: "Currency Converted", message: "You have converted \(self.userWantToSell) \(self.currencySell) to \(self.actualAmountOfCurrency) \(self.currencyRecieve). Comision Fee - \(feeString) \(self.currencySell).") { string, result in
+                    print("Done")
+                    self.loadData()
+                }
+            } else {
+                Utils.dismissAlert(title: "Exchange Error", message: "You don't have enough money.") { _, _ in
+                    print("Exchange Error")
+                }
+            }
+        }
     }
-
 }
 
 // MARK: - Extensions
 
-// MARK: - CurrencyExchange
+// MARK: - CurrencyExchangeProtocol
 
 extension CurrencyConverterVC: CurrencyExchange {
-    func changeCurrencyForSell(currency: Currency, sender: UIButton) {
-        openCurrencyListDropDown(type: .sell, sender: sender)
-    }
-    
-    func changeCurrencyForRecieve(currency: Currency, sender: UIButton) {
-        openCurrencyListDropDown(type: .recieve, sender: sender)
+    func changeCurrencyForSellOrRecieve(type: ExchangeType, sender: UIButton) {
+        openCurrencyListDropDown(type: type, sender: sender)
     }
 }
+
+// MARK: - UITextFieldDelegate
 
 extension CurrencyConverterVC: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -208,18 +276,39 @@ extension CurrencyConverterVC: UITextFieldDelegate {
         
         let count = textField.text?.count ?? 0
         // need set max and min amount
-        if count > 12 {
+        if count > 5 {
             textField.deleteBackward()
         }
-        
-        howMuchCurrencyEqualsChecking(amount: Double(filtered) ?? 0.020)
-        
         return string == filtered ? true : false
-        
+    }
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        let text = textField.text ?? ""
+        if text.count < 2 {
+            let indexPath = IndexPath(item: 1, section: 1)
+            self.actualAmountOfCurrency = 0.0
+            self.tableView.reloadRows(at: [indexPath], with: .none)
+        } else {
+                        
+            let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
+                self.userWantToSell = Double(textField.text ?? "") ?? 0.0
+                self.howMuchCurrencyEqualsChecking(amount: self.userWantToSell)
+            }
+            
+            // simulating a long answer
+            /*
+            self.startIndicator()
+            let timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { timer in
+                self.stopIndicator()
+                self.userWantToSell = Double(textField.text ?? "") ?? 0.0
+                self.howMuchCurrencyEqualsChecking(amount: self.userWantToSell)
+            }
+           */
+        }
     }
 }
 
-// MARK: - TableView Delegate
+// MARK: - TableViewDelegate
 
 extension CurrencyConverterVC: UITableViewDelegate, UITableViewDataSource {
     
@@ -260,12 +349,12 @@ extension CurrencyConverterVC: UITableViewDelegate, UITableViewDataSource {
         case 1:
             if indexPath.row == 0 {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CurrencySellTVCell.cellIdentifier, for: indexPath) as? CurrencySellTVCell else { return UITableViewCell() }
-                cell.configureUI(currency: currencySell, delegate: self)
+                cell.configureCell(currency: currencySell, delegate: self)
                 cell.amountTextField.delegate = self
                 return cell
             } else {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyRecieveTVCell.cellIdentifier, for: indexPath) as? CurrencyRecieveTVCell else { return UITableViewCell() }
-                cell.configureUI(currency: currencyRecieve, delegate: self)
+                cell.configureCell(currency: currencyRecieve, actualAmountOfCurrency: actualAmountOfCurrency, delegate: self)
                 return cell
             }
         default:

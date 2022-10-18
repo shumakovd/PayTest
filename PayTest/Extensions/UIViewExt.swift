@@ -51,12 +51,12 @@ extension UIView {
         let backgroundView = UIView()
         backgroundView.tag = 1010
         backgroundView.frame = self.bounds
-        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         
         let blurEffect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         
-        blurEffectView.alpha = 0.8
+        blurEffectView.alpha = 0.1
         blurEffectView.frame = self.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         

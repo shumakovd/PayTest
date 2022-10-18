@@ -21,7 +21,7 @@ class AppSettings {
     
     // MARK: - Environment
     
-    // For add new environment in future. dev, stage
+    // FIXME: - For add new environment in future. dev, stage
     static var env: String = "test"
     
     static var serverUrl: URL {
@@ -35,22 +35,27 @@ class AppSettings {
     
     // MARK: - Methods
     
-    func loadApplicationData() {
-                
+    func loadApplicationData() {                
         getAuthStatus()
         setupCurrencies()
     }
     
     func setupCurrencies() {
-        for currency in Currency.allCases {
-            AppSettings.currencies.append(currency)
+        for currency in NamesofCurrencies.allCases {
+            // FIXME: - Set fee for each currencies or download from DB
+            let fee = Double.random(in: 0.0 ... 5.0)
+            let model = Currency(name: currency, fee: fee)
+            AppSettings.currencies.append(model)
         }
     }
-      
     
     func getAuthStatus() {
         if UserDefaults.standard.getAuthenticationStatus() == false {
-            UserDefaults.setUserBalance(value: 1000.0, currency: .EUR)
+            for each in AppSettings.currencies {
+                if each.name == .USD {
+                    UserDefaults.setUserBalance(value: 1000.0, currency: each)
+                }
+            }
             UserDefaults.standard.setAuthenticationStatus(true)
         }
     }

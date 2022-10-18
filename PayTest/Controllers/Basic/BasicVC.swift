@@ -38,14 +38,6 @@ class BasicVC: UIViewController {
         view.stopAnimation()
     }
     
-    
-//
-    // MARK: - IBActions
-
-}
-
-extension BasicVC {
-    
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BasicVC.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -55,7 +47,6 @@ extension BasicVC {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-    
 }
 
 extension BasicVC {
