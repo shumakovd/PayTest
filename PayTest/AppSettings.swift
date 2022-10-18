@@ -36,19 +36,35 @@ class AppSettings {
     // MARK: - Methods
     
     func loadApplicationData() {
+                
+        getAuthStatus()
+        setupCurrencies()
+    }
+    
+    func setupCurrencies() {
         for currency in Currency.allCases {
             AppSettings.currencies.append(currency)
         }
-        print("Currencies: ", AppSettings.currencies)
     }
+      
     
-    func getBalance() -> [WalletML] {    
-        var models: [WalletML] = []
-        for i in 0 ..< AppSettings.currencies.count {
-            let model = WalletML(currency: AppSettings.currencies[i], count: Double(.random(in: 0 ... 1000)))
-            models.append(model)
+    func getAuthStatus() {
+        if UserDefaults.standard.getAuthenticationStatus() == false {
+            UserDefaults.setUserBalance(value: 1000.0, currency: .EUR)
+            UserDefaults.standard.setAuthenticationStatus(true)
         }
-        return models
     }
     
+    func getBalance() -> [WalletML] {
+        var balance: [WalletML] = []
+                        
+        for i in 0 ..< AppSettings.currencies.count {
+            let currency = AppSettings.currencies[i]
+            let amount = UserDefaults.getUserBalance(for: currency)
+            let model = WalletML(currency: currency, amount: amount)
+            balance.append(model)
+        }    
+        
+        return balance
+    }
 }

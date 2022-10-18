@@ -7,14 +7,22 @@
 
 import Foundation
 
-class WalletML {
-    
+class WalletML {    
     var currency: Currency?
-    var count: Double?
+    var amount: Double?
     
-    init(currency: Currency? = nil, count: Double? = nil) {
+    init(currency: Currency? = nil, amount: Double? = nil) {
         self.currency = currency
-        self.count = count
+        self.amount = amount
     }
+}
+
+class Fee {
+    var currency: Currency?
+    var fee: Double?
     
+    init(currency: Currency? = nil, fee: Double? = nil) {
+        self.currency = currency
+        self.fee = fee
+    }
 }

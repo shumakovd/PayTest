@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 import Foundation
 
 // MARK: - IBInspectable -
@@ -43,6 +44,45 @@ extension UIView {
 extension UIView {
     
     // MARK: - Animation
+    
+    static var lottie_gradient_loader = LottieAnimation.named("gradient-stroke-loader")
+    
+    func startAnimation() {
+        let backgroundView = UIView()
+        backgroundView.tag = 1010
+        backgroundView.frame = self.bounds
+        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        blurEffectView.alpha = 0.8
+        blurEffectView.frame = self.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        let animationView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        
+        let animation = LottieAnimationView(animation: UIView.lottie_gradient_loader)
+        
+        animation.contentMode = .scaleAspectFill
+        animation.loopMode = .loop
+        animation.play()
+        animation.frame = animationView.bounds
+        
+        animationView.addSubview(animation)
+        animationView.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+        //
+        backgroundView.insertSubview(blurEffectView, at: 0)
+        backgroundView.insertSubview(animationView, at: 1)
+        //
+        self.addSubview(backgroundView)
+    }
+    
+    func stopAnimation() {
+        if let view = self.viewWithTag(1010) {
+            view.removeFromSuperview()
+        }
+    }        
     
     func bounce(){
         

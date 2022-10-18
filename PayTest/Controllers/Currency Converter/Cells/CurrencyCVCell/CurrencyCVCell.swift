@@ -11,7 +11,12 @@ class CurrencyCVCell: BasicCVCell {
 
     // MARK: - IBOutlets
 
-    @IBOutlet private var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    // MARK: - Properties
+    
+    private var currencyLabel: String = ""
+    private var currencyCount: String = ""
 
     // MARK: - Lifecycle
 
@@ -20,19 +25,26 @@ class CurrencyCVCell: BasicCVCell {
     }
 
     override func awakeFromNib() {
-        super.awakeFromNib()
+        super.awakeFromNib()        
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
     
     // MARK: - Public Methods
 
-    func configureCell(currency: Currency) {
-        titleLabel.text = "\(Double(.random(in: 0 ... 1000))) \(currency.rawValue)"
+    func configureCell(balance: WalletML) {
+        currencyLabel = balance.currency?.rawValue ?? ""        
+        currencyCount = String(format: "%.2f", balance.amount ?? 0.0)
+        
+        titleSetup()
     }
 
     // MARK: - Private Methods
 
-//    private func setupTagsCollectionView() {
-//
-//    }
+    private func titleSetup() {
+        titleLabel.text = "\(currencyCount) \(currencyLabel)"
+    }
 
 }

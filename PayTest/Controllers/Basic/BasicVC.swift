@@ -28,18 +28,34 @@ class BasicVC: UIViewController {
     
     // MARK: - Methods
     
-//    func startIndicator() {
-//        view.endEditing(true)
-//        view.startAnimation()
-//    }
-//
-//    func stopIndicator() {
-//        view.endEditing(true)
-//        view.stopAnimation()
-//    }
+    func startIndicator() {
+        view.endEditing(true)
+        view.startAnimation()
+    }
+
+    func stopIndicator() {
+        view.endEditing(true)
+        view.stopAnimation()
+    }
+    
+    
 //
     // MARK: - IBActions
 
+}
+
+extension BasicVC {
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(BasicVC.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
 }
 
 extension BasicVC {

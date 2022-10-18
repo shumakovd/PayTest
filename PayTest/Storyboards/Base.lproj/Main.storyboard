@@ -18,12 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GjU-k1-w5r">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GjU-k1-w5r">
                                 <rect key="frame" x="0.0" y="86" width="390" height="758"/>
                                 <color key="backgroundColor" name="colorWB"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQL-uN-Ya2">
-                                <rect key="frame" x="32" y="722" width="326" height="56"/>
+                                <rect key="frame" x="32" y="746" width="326" height="56"/>
                                 <color key="backgroundColor" name="BrandColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="6Km-DG-aNC"/>
@@ -64,7 +64,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nQL-uN-Ya2" secondAttribute="bottom" constant="32" id="2rb-nB-AiQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nQL-uN-Ya2" secondAttribute="bottom" constant="8" id="2rb-nB-AiQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nQL-uN-Ya2" secondAttribute="trailing" constant="32" id="6iM-fG-KQP"/>
                             <constraint firstAttribute="bottom" secondItem="GjU-k1-w5r" secondAttribute="bottom" id="EkD-L2-4Kh"/>
                             <constraint firstItem="QDM-Zt-4vD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="I1u-pz-byh"/>

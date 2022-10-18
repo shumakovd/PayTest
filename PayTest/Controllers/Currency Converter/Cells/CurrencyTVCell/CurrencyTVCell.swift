@@ -32,13 +32,18 @@ class CurrencyTVCell: BasicTVCell {
         super.setSelected(selected, animated: animated)
     }
     
-    // MARK: - Methods
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
     
-    func configureCell(wallet: [WalletML]) {
-        self.balance = wallet
-        
+    // MARK: - Public Methods
+    
+    func configureCell(balance: [WalletML]) {
+        self.balance = balance
         collectionView.reloadData()
     }
+    
+    // MARK: - Private Methods
     
     private func setupCollectionView() {
         collectionView.delegate = self
@@ -48,8 +53,7 @@ class CurrencyTVCell: BasicTVCell {
         let layout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: 20, height: 36)
         layout.itemSize = UICollectionViewFlowLayout.automaticSize
-        // layout.minimumInteritemSpacing = 8
-        // layout.minimumLineSpacing = 5
+        layout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = layout
         
         CurrencyCVCell.registerForCollectionView(aCollectionView: collectionView)
@@ -75,14 +79,8 @@ extension CurrencyTVCell: UICollectionViewDelegate, UICollectionViewDataSource {
     }    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CurrencyCVCell.cellIdentifier, for: indexPath) as? CurrencyCVCell else { return BasicCVCell() }
-        cell.configureCell(currency: balance[indexPath.row].currency ?? .EUR)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CurrencyCVCell.cellIdentifier, for: indexPath) as? CurrencyCVCell else { return UICollectionViewCell() }
+        cell.configureCell(balance: balance[indexPath.row])
         return cell
     }
-    
-    
-    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Did Select Item With IndexPath: ", indexPath)
-    }
-    
 }

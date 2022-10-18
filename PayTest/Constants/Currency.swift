@@ -8,5 +8,5 @@
 import Foundation
 
 enum Currency: String, CaseIterable {
-    case EUR, USD, JPY, UAH
+    case EUR, USD, JPY
 }

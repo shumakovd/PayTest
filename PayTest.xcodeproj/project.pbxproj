@@ -23,6 +23,13 @@
 		846B6AD128FDAB7E009D9DD9 /* CurrencyTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B6ACF28FDAB7E009D9DD9 /* CurrencyTVCell.swift */; };
 		846B6AD228FDAB7E009D9DD9 /* CurrencyTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846B6AD028FDAB7E009D9DD9 /* CurrencyTVCell.xib */; };
 		846B6AD428FDACD5009D9DD9 /* WalletML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B6AD328FDACD5009D9DD9 /* WalletML.swift */; };
+		849779B828FE53E200EFD1A0 /* gradient-stroke-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 849779B728FE53E200EFD1A0 /* gradient-stroke-loader.json */; };
+		849779BA28FE59AB00EFD1A0 /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849779B928FE59AB00EFD1A0 /* UserDefaultsExt.swift */; };
+		84C844E728FE991500C68941 /* CurrencyTypeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C844E528FE991500C68941 /* CurrencyTypeTVCell.swift */; };
+		84C844E828FE991500C68941 /* CurrencyTypeTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C844E628FE991500C68941 /* CurrencyTypeTVCell.xib */; };
+		84C844EA28FEB24900C68941 /* UITextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C844E928FEB24900C68941 /* UITextFieldExt.swift */; };
+		84C844EC28FEB56C00C68941 /* CurrencyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C844EB28FEB56C00C68941 /* CurrencyRouter.swift */; };
+		84C844EE28FEBFBD00C68941 /* ExchangeML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C844ED28FEBFBD00C68941 /* ExchangeML.swift */; };
 		84E899DF28FD578000385AD2 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899DE28FD578000385AD2 /* APIManager.swift */; };
 		84E899E228FD59F700385AD2 /* NetworkStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899E128FD59F700385AD2 /* NetworkStatus.swift */; };
 		84E899E528FD674E00385AD2 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E899E428FD674E00385AD2 /* BaseRouter.swift */; };
@@ -86,6 +93,13 @@
 		846B6ACF28FDAB7E009D9DD9 /* CurrencyTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTVCell.swift; sourceTree = "<group>"; };
 		846B6AD028FDAB7E009D9DD9 /* CurrencyTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTVCell.xib; sourceTree = "<group>"; };
 		846B6AD328FDACD5009D9DD9 /* WalletML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletML.swift; sourceTree = "<group>"; };
+		849779B728FE53E200EFD1A0 /* gradient-stroke-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "gradient-stroke-loader.json"; sourceTree = "<group>"; };
+		849779B928FE59AB00EFD1A0 /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
+		84C844E528FE991500C68941 /* CurrencyTypeTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTypeTVCell.swift; sourceTree = "<group>"; };
+		84C844E628FE991500C68941 /* CurrencyTypeTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyTypeTVCell.xib; sourceTree = "<group>"; };
+		84C844E928FEB24900C68941 /* UITextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExt.swift; sourceTree = "<group>"; };
+		84C844EB28FEB56C00C68941 /* CurrencyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRouter.swift; sourceTree = "<group>"; };
+		84C844ED28FEBFBD00C68941 /* ExchangeML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeML.swift; sourceTree = "<group>"; };
 		84E899DE28FD578000385AD2 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		84E899E128FD59F700385AD2 /* NetworkStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatus.swift; sourceTree = "<group>"; };
 		84E899E428FD674E00385AD2 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
@@ -245,6 +259,31 @@
 			path = CurrencyTVCell;
 			sourceTree = "<group>";
 		};
+		849779BD28FE702F00EFD1A0 /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				84C844E328FE991500C68941 /* DropDown */,
+			);
+			path = Popups;
+			sourceTree = "<group>";
+		};
+		84C844E328FE991500C68941 /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				84C844E428FE991500C68941 /* Cells */,
+			);
+			path = DropDown;
+			sourceTree = "<group>";
+		};
+		84C844E428FE991500C68941 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84C844E528FE991500C68941 /* CurrencyTypeTVCell.swift */,
+				84C844E628FE991500C68941 /* CurrencyTypeTVCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		84E899DB28FD561400385AD2 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +298,8 @@
 			children = (
 				84E89A0128FD79A700385AD2 /* UIViewExt.swift */,
 				84E899F628FD711600385AD2 /* NotificationExt.swift */,
+				84C844E928FEB24900C68941 /* UITextFieldExt.swift */,
+				849779B928FE59AB00EFD1A0 /* UserDefaultsExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -287,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				84E899E428FD674E00385AD2 /* BaseRouter.swift */,
+				84C844EB28FEB56C00C68941 /* CurrencyRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -295,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				846B6AD328FDACD5009D9DD9 /* WalletML.swift */,
+				84C844ED28FEBFBD00C68941 /* ExchangeML.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,6 +347,7 @@
 			children = (
 				84E899EE28FD6E4E00385AD2 /* Basic */,
 				84E899EF28FD6E6500385AD2 /* Currency Converter */,
+				849779BD28FE702F00EFD1A0 /* Popups */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -358,6 +402,7 @@
 		84E899FD28FD758F00385AD2 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
+				849779B728FE53E200EFD1A0 /* gradient-stroke-loader.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -498,8 +543,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				846B6AD228FDAB7E009D9DD9 /* CurrencyTVCell.xib in Resources */,
+				849779B828FE53E200EFD1A0 /* gradient-stroke-loader.json in Resources */,
 				846B6AC828FD9E95009D9DD9 /* CurrencySellTVCell.xib in Resources */,
 				84E89A0C28FD80AD00385AD2 /* CurrencyCVCell.xib in Resources */,
+				84C844E828FE991500C68941 /* CurrencyTypeTVCell.xib in Resources */,
 				8413ABB328FD51CE00DE8ECF /* LaunchScreen.storyboard in Resources */,
 				8413ABB028FD51CE00DE8ECF /* Assets.xcassets in Resources */,
 				8413ABAB28FD51C900DE8ECF /* Main.storyboard in Resources */,
@@ -636,6 +683,7 @@
 				84E899DF28FD578000385AD2 /* APIManager.swift in Sources */,
 				84E899E528FD674E00385AD2 /* BaseRouter.swift in Sources */,
 				8413ABA428FD51C900DE8ECF /* AppDelegate.swift in Sources */,
+				849779BA28FE59AB00EFD1A0 /* UserDefaultsExt.swift in Sources */,
 				846B6AC728FD9E95009D9DD9 /* CurrencySellTVCell.swift in Sources */,
 				84E899E228FD59F700385AD2 /* NetworkStatus.swift in Sources */,
 				84E899FB28FD736E00385AD2 /* Utils.swift in Sources */,
@@ -644,11 +692,15 @@
 				846B6ACC28FD9EB5009D9DD9 /* CurrencyRecieveTVCell.swift in Sources */,
 				84E899E728FD678700385AD2 /* APIConfiguration.swift in Sources */,
 				84E89A0028FD77BA00385AD2 /* Currency.swift in Sources */,
+				84C844EE28FEBFBD00C68941 /* ExchangeML.swift in Sources */,
 				84E899F528FD6FB300385AD2 /* BasicTVCell.swift in Sources */,
 				84E89A1228FD81D500385AD2 /* CurrencyConverterHeaderTVCell.swift in Sources */,
+				84C844EC28FEB56C00C68941 /* CurrencyRouter.swift in Sources */,
+				84C844EA28FEB24900C68941 /* UITextFieldExt.swift in Sources */,
 				84E899F728FD711600385AD2 /* NotificationExt.swift in Sources */,
 				84E899F128FD6EFA00385AD2 /* BasicVC.swift in Sources */,
 				846B6AD128FDAB7E009D9DD9 /* CurrencyTVCell.swift in Sources */,
+				84C844E728FE991500C68941 /* CurrencyTypeTVCell.swift in Sources */,
 				84E89A0228FD79A700385AD2 /* UIViewExt.swift in Sources */,
 				84E899E928FD682100385AD2 /* AppSettings.swift in Sources */,
 				846B6AD428FDACD5009D9DD9 /* WalletML.swift in Sources */,

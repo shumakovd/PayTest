@@ -31,6 +31,10 @@ class CurrencyRecieveTVCell: BasicTVCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 
     // MARK: - Methods
 
@@ -41,8 +45,8 @@ class CurrencyRecieveTVCell: BasicTVCell {
     
     // MARK: - IBActions
     
-    @IBAction private func changeCurrencyAction(_: UIButton) {
-        delegate?.changeCurrency()
+    @IBAction private func changeCurrencyAction(_ sender: UIButton) {
+        delegate?.changeCurrencyForRecieve(currency: .USD, sender: sender)
     }
     
 }

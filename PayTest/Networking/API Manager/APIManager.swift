@@ -14,11 +14,17 @@ final class APIManager {
     /// The static field that controls the access to the singleton instance.
     /// This implementation let you extend the Singleton class while keeping
     /// just one instance of each subclass around.
-    static var shared: APIManager = {
-        return APIManager()
+    class func shared() -> APIManager {
+        return sharedNetworkManager
+    }
+    
+    private static var sharedNetworkManager: APIManager = {
+        APIManager()
     }()
     
     private init() {}
+    
+    // MARK: - Enums -
     
     enum Result<T> {
         case success(T)
@@ -40,14 +46,15 @@ final class APIManager {
         configuration.timeoutIntervalForResource = 60
         return Alamofire.Session(configuration: configuration)
     }()
-    
-    // http://api.evp.lt/currency/commercial/exchange/{fromAmount}-{fromCurrency}/{toCurrency}/latest
-    
+        
     private func performRequest<T: Codable>(router: BaseRouter, needToChangeDecoder: Bool = false, completion: @escaping (Result<T>) -> Void) {
-        if NetworkStatus.isConnectedToInternet() {
+        print("API -->: \(router.path), params: \(String(describing: router.parameters ?? nil)) ")
+        
+        // Check Internet connection
+        if !NetworkStatus.isConnectedToInternet() {
             completion(.failure(failureNoInternet))
         }
-        
+        // Setup decoder
         let decoder = JSONDecoder()
         if needToChangeDecoder {
             let formatter = DateFormatter()
@@ -58,15 +65,42 @@ final class APIManager {
             decoder.dateDecodingStrategy = .secondsSince1970
         }
         
-//        manager.request(router).validate().responseDecodableObject(keyPath: router.keyPath, decoder: decoder) { (response: DataResponse<T>) in
-//            print("Result: \(String(describing: response.response))")
-//
-//        }
-
-
+        manager.request(router).responseDecodableObject(keyPath: router.keyPath, decoder: decoder) { (response: AFDataResponse<T>) in
+            print("Result: \(String(describing: response.response))")
+            
+            guard response.error == nil else {
+                let statusCode = response.response?.statusCode ?? -1
+                print("Status Code = \(statusCode)")
+                // Handle status code and work with it
+                completion(.failure("\(statusCode)"))
+                return
+            }
+            
+            if let object = response.value {
+                print("SUCCESS DECODE")
+                do {
+                    let encoder = JSONEncoder()
+                    encoder.outputFormatting = .prettyPrinted
+                    let data = try encoder.encode(object)
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        print(jsonString)
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
     
     
+    // -------------------------------------------------------------------------------------------
 
-    
+    // MARK: - CURRENCY METHODS
+
+    // -------------------------------------------------------------------------------------------
+
+    func getCurrencyAmount<T: Codable>(fromAmount: Double, fromCurrency: Currency, toCurrency: Currency, completion: @escaping (Result<T>) -> Void) {
+        let router = CurrencyRouter(anEndpoint: .exchange(fromAmount: fromAmount, fromCurrency: fromCurrency, toCurrency: toCurrency))
+        performRequest(router: router, completion: completion)
+    }
 }
