@@ -13,16 +13,32 @@ enum NamesofCurrencies: String, CaseIterable {
     case EUR, USD, JPY
 }
 
-class Currency {
-    var name: NamesofCurrencies
-    var fee: Double
+enum Keys: String {
+    case name, fee, username, currency, amount
+}
+
+class CurrencyML: NSObject, NSCoding {
     
-    init(name: NamesofCurrencies, fee: Double) {
+    var fee: Double
+    var name: String
+    
+    init(name: String, fee: Double) {
         self.name = name
         self.fee = fee
     }
     
+    required init?(coder: NSCoder) {
+        self.fee = coder.decodeDouble(forKey: Keys.fee.rawValue)        
+        self.name = coder.decodeObject(forKey: Keys.name.rawValue) as? String ?? ""
+    }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(fee, forKey: Keys.fee.rawValue)
+        coder.encode(name, forKey: Keys.name.rawValue)
+    }
+    
     func getActualFees(amount: Double) -> Double {
         return amount * fee
-    }        
+    }
+
 }

@@ -7,14 +7,33 @@
 
 import Foundation
 
-class WalletML {    
-    var currency: Currency
+class WalletML: NSObject, NSCoding {
+    
+    // MARK: - Properties
+    
+    var currency: CurrencyML
     var amount: Double
     
-    init(currency: Currency, amount: Double) {
+    // MARK: - Init
+    
+    init(currency: CurrencyML, amount: Double) {
         self.currency = currency
         self.amount = amount
     }
+    
+    required init?(coder: NSCoder) {        
+        self.amount = coder.decodeDouble(forKey: Keys.amount.rawValue)
+        self.currency = coder.decodeObject(forKey: Keys.currency.rawValue) as? CurrencyML ?? CurrencyML(name: "", fee: 0.0)
+    }
+    
+    // MARK: - Encode
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(amount, forKey: Keys.amount.rawValue)
+        coder.encode(currency, forKey: Keys.currency.rawValue)
+    }
+    
+    // MARK: - Methods
     
     func freeFeeExist() -> Bool {
         let freeConverters = UserDefaults.standard.getCountConverted() ?? 0
@@ -36,16 +55,5 @@ class WalletML {
     func increaseCurrency(forTheAmount: Double) {
         amount += forTheAmount
         UserDefaults.setUserBalance(value: amount, currency: currency)
-    }
-    
-}
-
-class Fee {
-    var currency: Currency?
-    var fee: Double?
-    
-    init(currency: Currency? = nil, fee: Double? = nil) {
-        self.currency = currency
-        self.fee = fee
     }
 }

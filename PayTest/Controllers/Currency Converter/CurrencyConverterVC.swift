@@ -94,7 +94,7 @@ class CurrencyConverterVC: BasicVC {
         
     private func checkIfUserHasEnoughtMoney() -> Bool {
         for each in myBalance {
-            if each.currency.name == currencySell {
+            if each.currency.name == currencySell.rawValue {
                 currentFee = each.currency.fee
                 if each.freeFeeExist() {
                     currentFee = 0.0
@@ -117,11 +117,11 @@ class CurrencyConverterVC: BasicVC {
         }
                 
         for each in myBalance {
-            if each.currency.name == currencySell {
+            if each.currency.name == currencySell.rawValue {
                 each.decreaseCurrency(inTheAmountOf: userWantToSell)
             }
             
-            if each.currency.name == currencyRecieve {
+            if each.currency.name == currencyRecieve.rawValue {
                 each.increaseCurrency(forTheAmount: actualAmountOfCurrency)
             }
         }
@@ -173,7 +173,7 @@ class CurrencyConverterVC: BasicVC {
         view.endEditing(true)
         setupCurrencyListDropDown(dropDown: currencyListDropDown)
         //
-        let dataSource = AppSettings.currencies.compactMap({$0.name.rawValue})
+        let dataSource = AppSettings.currencies.compactMap({$0.name})
         currencyListDropDown.dataSource = dataSource
         // modify frame, size, etc
         currencyListDropDown.anchorView = sender
@@ -198,14 +198,16 @@ class CurrencyConverterVC: BasicVC {
             switch type {
             case .sell:
                 for each in AppSettings.currencies {
-                    if each.name.rawValue == item {
-                        strongSelf.currencySell = each.name
+                    if each.name == item {
+                        let value = NamesofCurrencies(rawValue: item)
+                        strongSelf.currencySell = value ?? .USD
                     }
                 }
             case .recieve:
                 for each in AppSettings.currencies {
-                    if each.name.rawValue == item {
-                        strongSelf.currencyRecieve = each.name
+                    if each.name == item {
+                        let value = NamesofCurrencies(rawValue: item)
+                        strongSelf.currencyRecieve = value ?? .USD
                     }
                 }
             }

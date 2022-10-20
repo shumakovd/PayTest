@@ -35,7 +35,7 @@ class CurrencyCVCell: BasicCVCell {
     // MARK: - Public Methods
 
     func configureCell(balance: WalletML) {
-        currencyString = balance.currency.name.rawValue
+        currencyString = balance.currency.name
         currencyCount = String(format: "%.2f", balance.amount)
         
         configureUI()

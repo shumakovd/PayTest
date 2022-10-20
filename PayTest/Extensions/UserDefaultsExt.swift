@@ -28,14 +28,14 @@ extension UserDefaults {
     
     // MY BALANCE
         
-    static func setUserBalance(value: Double, currency: Currency) {
+    static func setUserBalance(value: Double, currency: CurrencyML) {
         let defaults = UserDefaults(suiteName: UserDefaultsStruct.userBalance)
-        defaults?.set(value, forKey: currency.name.rawValue)
+        defaults?.set(value, forKey: currency.name)
     }
     
-    static func getUserBalance(for currency: Currency) -> Double {    
+    static func getUserBalance(for currency: CurrencyML) -> Double {    
         let defaults = UserDefaults(suiteName: UserDefaultsStruct.userBalance)
-        let value = defaults?.object(forKey: currency.name.rawValue) as? Double
+        let value = defaults?.object(forKey: currency.name) as? Double
         return value ?? 0.0
     }
     

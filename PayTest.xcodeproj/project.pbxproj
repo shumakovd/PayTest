@@ -25,6 +25,7 @@
 		846B6AD428FDACD5009D9DD9 /* WalletML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846B6AD328FDACD5009D9DD9 /* WalletML.swift */; };
 		849779B828FE53E200EFD1A0 /* gradient-stroke-loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 849779B728FE53E200EFD1A0 /* gradient-stroke-loader.json */; };
 		849779BA28FE59AB00EFD1A0 /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849779B928FE59AB00EFD1A0 /* UserDefaultsExt.swift */; };
+		8499D7A92900313100F07AC8 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8499D7A82900313100F07AC8 /* CoreDataManager.swift */; };
 		84C844E728FE991500C68941 /* CurrencyTypeTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C844E528FE991500C68941 /* CurrencyTypeTVCell.swift */; };
 		84C844E828FE991500C68941 /* CurrencyTypeTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C844E628FE991500C68941 /* CurrencyTypeTVCell.xib */; };
 		84C844EA28FEB24900C68941 /* UITextFieldExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C844E928FEB24900C68941 /* UITextFieldExt.swift */; };
@@ -94,6 +95,7 @@
 		846B6AD328FDACD5009D9DD9 /* WalletML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletML.swift; sourceTree = "<group>"; };
 		849779B728FE53E200EFD1A0 /* gradient-stroke-loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "gradient-stroke-loader.json"; sourceTree = "<group>"; };
 		849779B928FE59AB00EFD1A0 /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
+		8499D7A82900313100F07AC8 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		84C844E528FE991500C68941 /* CurrencyTypeTVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyTypeTVCell.swift; sourceTree = "<group>"; };
 		84C844E628FE991500C68941 /* CurrencyTypeTVCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurrencyTypeTVCell.xib; sourceTree = "<group>"; };
 		84C844E928FEB24900C68941 /* UITextFieldExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExt.swift; sourceTree = "<group>"; };
@@ -206,9 +208,9 @@
 				84E899E028FD59DC00385AD2 /* Networking */,
 				84E899DB28FD561400385AD2 /* Storyboards */,
 				84E899FC28FD758200385AD2 /* Lottie */,
+				8499D7A72900311000F07AC8 /* CoreData */,
 				8413ABAF28FD51CE00DE8ECF /* Assets.xcassets */,
 				8413ABB428FD51CE00DE8ECF /* Info.plist */,
-				8413ABAC28FD51C900DE8ECF /* PayTest.xcdatamodeld */,
 			);
 			path = PayTest;
 			sourceTree = "<group>";
@@ -263,6 +265,15 @@
 				84C844E328FE991500C68941 /* DropDown */,
 			);
 			path = Popups;
+			sourceTree = "<group>";
+		};
+		8499D7A72900311000F07AC8 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				8413ABAC28FD51C900DE8ECF /* PayTest.xcdatamodeld */,
+				8499D7A82900313100F07AC8 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		84C844E328FE991500C68941 /* DropDown */ = {
@@ -696,6 +707,7 @@
 				84C844EA28FEB24900C68941 /* UITextFieldExt.swift in Sources */,
 				84E899F128FD6EFA00385AD2 /* BasicVC.swift in Sources */,
 				846B6AD128FDAB7E009D9DD9 /* CurrencyTVCell.swift in Sources */,
+				8499D7A92900313100F07AC8 /* CoreDataManager.swift in Sources */,
 				84C844E728FE991500C68941 /* CurrencyTypeTVCell.swift in Sources */,
 				84E89A0228FD79A700385AD2 /* UIViewExt.swift in Sources */,
 				84E899E928FD682100385AD2 /* AppSettings.swift in Sources */,

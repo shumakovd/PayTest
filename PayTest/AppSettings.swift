@@ -17,7 +17,7 @@ class AppSettings {
     
     // MARK: - Properties
         
-    static var currencies: [Currency] = []
+    static var currencies: [CurrencyML] = []
     
     // MARK: - Environment
     
@@ -38,13 +38,13 @@ class AppSettings {
     func loadApplicationData() {                
         getAuthStatus()
         setupCurrencies()
-    }
+    }        
     
     func setupCurrencies() {
         for currency in NamesofCurrencies.allCases {
             // FIXME: - Set fee for each currencies or download from DB
             let fee = Double.random(in: 0.0 ... 5.0)
-            let model = Currency(name: currency, fee: fee)
+            let model = CurrencyML(name: currency.rawValue, fee: fee)
             AppSettings.currencies.append(model)
         }
     }
@@ -52,7 +52,7 @@ class AppSettings {
     func getAuthStatus() {
         if UserDefaults.standard.getAuthenticationStatus() == false {
             for each in AppSettings.currencies {
-                if each.name == .USD {
+                if each.name == NamesofCurrencies.USD.rawValue {
                     UserDefaults.setUserBalance(value: 1000.0, currency: each)
                 }
             }
