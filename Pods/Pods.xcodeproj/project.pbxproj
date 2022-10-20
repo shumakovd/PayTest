@@ -947,7 +947,6 @@
 				084743EF43BA53EDF5396A8E9414BBA4 /* DataRequest+Decodable.swift */,
 				E1E969CC6CF46B1EE9C93179E28BA245 /* Support Files */,
 			);
-			name = CodableAlamofire;
 			path = CodableAlamofire;
 			sourceTree = "<group>";
 		};
@@ -963,7 +962,10 @@
 				A1CC2BC4DCE5268A501ABF2960E123AC /* Resources */,
 				CB49A91F5D9FD65EE9A0D8F6A17833A5 /* Support Files */,
 			);
+<<<<<<< Updated upstream
 			name = DropDown;
+=======
+>>>>>>> Stashed changes
 			path = DropDown;
 			sourceTree = "<group>";
 		};
@@ -1012,7 +1014,11 @@
 				5C9E92DAD738ECE103AA32AD1011C830 /* CodableAlamofire */,
 				9B6725B782188F18CB76A740433F14E4 /* DropDown */,
 				51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */,
+<<<<<<< Updated upstream
 				7FF29445A318E80E367D4E94DBD6DD97 /* Pods-PayTest */,
+=======
+				7FF29445A318E80E367D4E94DBD6DD97 /* Pods_PayTest.framework */,
+>>>>>>> Stashed changes
 				A94706864649431726150BD6F802A6CC /* Pods-PayTest-PayTestUITests */,
 				B627E0509356AC1A420BC4C3F566F8B7 /* Pods-PayTestTests */,
 			);
@@ -1095,7 +1101,10 @@
 				372C8510BDF7D6656A863DA6B2E080D6 /* Validation.swift */,
 				592EB1FA934DA4A95CECBD2655B40BE8 /* Support Files */,
 			);
+<<<<<<< Updated upstream
 			name = Alamofire;
+=======
+>>>>>>> Stashed changes
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1252,7 +1261,7 @@
 			);
 			name = "Pods-PayTest";
 			productName = Pods_PayTest;
-			productReference = 7FF29445A318E80E367D4E94DBD6DD97 /* Pods-PayTest */;
+			productReference = 7FF29445A318E80E367D4E94DBD6DD97 /* Pods_PayTest.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		AEC0880BFF93B198B9685C7BAC1502EE /* Pods-PayTest-PayTestUITests */ = {

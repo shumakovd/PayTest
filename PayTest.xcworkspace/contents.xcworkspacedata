@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "container:"
+      name = "WalletCoreDataClass">
+      <FileRef
+         location = "group:CoreData/Wallet+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:CoreData/Wallet+CoreDataProperties.swift">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "CurrencyCoreDataClass">
+      <FileRef
+         location = "group:CoreData/Currency+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:CoreData/Currency+CoreDataProperties.swift">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
+      name = "AccountCoreDataClass">
+      <FileRef
+         location = "group:CoreData/Account+CoreDataClass.swift">
+      </FileRef>
+      <FileRef
+         location = "group:CoreData/Account+CoreDataProperties.swift">
+      </FileRef>
+   </Group>
    <FileRef
       location = "group:PayTest.xcodeproj">
    </FileRef>
